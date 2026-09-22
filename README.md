@@ -1,7 +1,7 @@
 # Customer Churn Prediction & Retention Insights
 
 Predicting telecom customer churn and translating model output into concrete
-retention actions — not just a classifier, but an end-to-end analysis a
+retention actions not just a classifier, but an end-to-end analysis a
 business team could actually use.
 
 ![Churn Distribution](images/churn_distribution.png)
@@ -9,8 +9,8 @@ business team could actually use.
 ## Problem
 
 Acquiring a new customer costs significantly more than retaining an existing
-one, so being able to flag *which* customers are likely to churn — and *why*
-— lets a retention team intervene before it's too late. This project builds
+one, so being able to flag *which* customers are likely to churn and *why*
+lets a retention team intervene before it's too late. This project builds
 that pipeline: from raw customer data to a deployable-quality model to
 plain-language business recommendations.
 
@@ -20,17 +20,17 @@ The dataset (`data/customer_churn.csv`, 3,000 customers) is **synthetically
 generated** by [`src/generate_data.py`](src/generate_data.py) to mirror the
 structure and feature relationships of real-world telecom churn data
 (demographics, contract type, billing, service usage), with churn driven by
-a realistic underlying risk model plus noise — landing at a **27.3% churn
+a realistic underlying risk model plus noise landing at a **27.3% churn
 rate**, in line with published telecom churn benchmarks. Generating rather
 than downloading the data keeps the project 100% reproducible end-to-end and
 avoids relying on an external dataset link that could break.
 
 ## Approach
 
-1. **Exploratory Data Analysis** — churn distribution, tenure/charges/contract
+1. **Exploratory Data Analysis** churn distribution, tenure/charges/contract
    relationships, categorical service drivers, correlation analysis
 2. **Preprocessing** — categorical encoding, feature scaling, stratified train/test split
-3. **Modeling** — Logistic Regression, Random Forest, and Gradient Boosting compared head-to-head
+3. **Modeling** — Logistic Regression, Random Forest, and Gradient Boosting compared head to head
 4. **Handling class imbalance** — since only ~27% of customers churn, models
    are trained with balanced class weighting so they aren't biased toward
    just predicting "no churn"; the **F1 score** (not raw accuracy) is used to
